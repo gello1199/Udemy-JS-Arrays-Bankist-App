@@ -65,11 +65,6 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
 
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -126,29 +121,50 @@ const currencies = new Map([
 // console.log('Jonas'.at([-1]))
 
 // Looping Arrays: forEach
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-// for(const movement of movements) {
-  for(const [i, movement] of movements.entries()) {
-  if(movement > 0) {
-    console.log(`Movement ${i + 1}: You deposited ${movement}`)
-  } else {
-    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`)
-  }
-}
+// // for(const movement of movements) {
+//   for(const [i, movement] of movements.entries()) {
+//   if(movement > 0) {
+//     console.log(`Movement ${i + 1}: You deposited ${movement}`)
+//   } else {
+//     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`)
+//   }
+// }
 
-console.log('-----FOR EACH------')
-// order of parameters makes a difference. It's different from for of
-// forEach won't break out of loop. It runs the entire array
-movements.forEach(function(mov, i, arr) {
-  if(mov > 0) {
-    console.log(`Movement ${i + 1}: You deposited ${mov}`)
-  } else {
-    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`)
-  }
+// console.log('-----FOR EACH------')
+// // order of parameters makes a difference. It's different from for of
+// // forEach won't break out of loop. It runs the entire array
+// movements.forEach(function(mov, i, arr) {
+//   if(mov > 0) {
+//     console.log(`Movement ${i + 1}: You deposited ${mov}`)
+//   } else {
+//     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`)
+//   }
+// })
+
+// console.log('----FOR EACH ARROW----')
+// movements.forEach(movement => {
+//   movement > 0 ? console.log(`You deposited ${movement}`) : console.log(`You withdrew ${Math.abs(movement)}`)
+// })
+
+// forEach with Maps and Sets
+
+// MAP
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function(value, key, map) {
+  console.log(`${key}: ${value}`)
 })
 
-console.log('----FOR EACH ARROW----')
-movements.forEach(movement => {
-  movement > 0 ? console.log(`You deposited ${movement}`) : console.log(`You withdrew ${Math.abs(movement)}`)
+// SET
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR'])
+console.log(currenciesUnique)
+
+currenciesUnique.forEach(function(value, _, map) {
+  console.log(`${value}: ${value}`)
 })
