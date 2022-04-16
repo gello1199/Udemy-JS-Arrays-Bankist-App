@@ -86,22 +86,33 @@ const createUsernames = function(accs) {
 }
 
 createUsernames(accounts)
-console.log(accounts)
+// console.log(accounts)
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
 // LECTURES
 
-// The Filter Method
+// The reduce method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const deposits = movements.filter(mov => mov > 0)
-console.log(movements)
-console.log(deposits)
+// accumulator -> SNOWBALL
+const balance = movements.reduce(function(acc, curr, i, arr) {
+  console.log(`Iteration ${i}: ${acc} `)
+  return acc + curr
+}, 0)
 
-const withdrawal = movements.filter(mov => mov < 0) 
-console.log(withdrawal)
+console.log(balance)
+
+// The Filter Method
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const deposits = movements.filter(mov => mov > 0)
+// console.log(movements)
+// console.log(deposits)
+
+// const withdrawal = movements.filter(mov => mov < 0) 
+// console.log(withdrawal)
 
 // const depositsFor = []
 // for(const mov of movements) if(mov > 0) depositsFor.push(mov)
@@ -281,4 +292,3 @@ GOOD LUCK 😀
 // currenciesUnique.forEach(function(value, _, map) {
 //   console.log(`${value}: ${value}`)
 // })
-
