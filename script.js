@@ -119,7 +119,12 @@ GOOD LUCK 😀
 
 const calcAverageHumanAge = function(ages) {
   const humanAges = ages.map(age => age <= 2 ? 2 * age : 16 + age * 4)
+  const oldDogs = humanAges.filter(age => age > 18)
   console.log(humanAges)
+  console.log(oldDogs)
+  // const avgAge = oldDogs.reduce((acc, age) => acc + age, 0)/oldDogs.length
+  const avgAge = oldDogs.reduce((acc, age, i, arr) => acc + age / arr.length, 0)
+  console.log(avgAge)
 }
 
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
