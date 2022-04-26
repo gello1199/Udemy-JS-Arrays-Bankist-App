@@ -204,12 +204,47 @@ btnClose.addEventListener('click', function(e) {
 
 // LECTURES
 
-// flat and flatMap Methods
-const arr = [[1,2,3], [4,5,6], 7,8]
-console.log(arr.flat())
+// Sorting Arrays
 
-const arrDeep = [[[1,2],3], [4,[5,6]], 7,8]
-console.log(arrDeep.flat(2))
+// Strings
+const owners = ['Jonas', 'Zack', 'Adam', 'Martha']
+console.log(owners.sort())
+console.log(owners)
+
+// Numbers
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements)
+
+// return < 0, A, B (keep order)
+// return > 0, B, A (switch order)
+
+// Ascending
+// movements.sort((a, b) => {
+//   if(a > b) return 1
+//   if(b > a) return -1
+// })
+
+movements.sort((a, b) => a - b)
+console.log(movements)
+
+// Descending
+// movements.sort((a, b) => {
+//   if(a > b) return -1
+//   if(b > a) return 1
+// })
+
+movements.sort((a, b) => b - a)
+
+console.log(movements)
+
+
+// flat and flatMap Methods
+// const arr = [[1,2,3], [4,5,6], 7,8]
+// console.log(arr.flat())
+
+// const arrDeep = [[[1,2],3], [4,[5,6]], 7,8]
+// console.log(arrDeep.flat(2))
 // 2 represents the level of nesting that needs to flatten array
 
 // const accountMovements = accounts.map(acc => acc.movements)
@@ -221,18 +256,18 @@ console.log(arrDeep.flat(2))
 
 // Refactored above code
 // flat
-const overalBalance = accounts
-.map(acc => acc.movements)
-.flat()
-.reduce((acc, mov) => acc + mov, 0)
-console.log(overalBalance)
+// const overalBalance = accounts
+// .map(acc => acc.movements)
+// .flat()
+// .reduce((acc, mov) => acc + mov, 0)
+// console.log(overalBalance)
 
 // flatMap
 // only goes 1 level deep
-const overalBalance2 = accounts
-.flatMap(acc => acc.movements)
-.reduce((acc, mov) => acc + mov, 0)
-console.log(overalBalance2)
+// const overalBalance2 = accounts
+// .flatMap(acc => acc.movements)
+// .reduce((acc, mov) => acc + mov, 0)
+// console.log(overalBalance2)
 
 
 // The some and every methods
