@@ -213,39 +213,67 @@ btnSort.addEventListener('click', function(e) {
 
 // LECTURES
 
+// More ways of creating arrays
+
+const arr = [1,2,3,4,5,6,7]
+console.log(new Array(1,2,3,4,5,6,7))
+
+// Empty Arrays + fill method
+const x = new Array(7)
+console.log(x)
+// console.log(x.map(() => 5))
+
+x.fill(1, 3, 5)
+x.fill(1)
+console.log(x)
+
+arr.fill(23, 2, 6)
+console.log(arr)
+
+// Array.from
+
+const y = Array.from({length: 7}, () => 1)
+console.log(y)
+
+const z = Array.from({length: 7}, (_, i) => i + 1)
+console.log(z)
+
+const random = Array.from({length: 100}, (_, i) => Math.floor(Math.random() * i))
+console.log(random)
+
 // Sorting Arrays
 
-// Strings
-const owners = ['Jonas', 'Zack', 'Adam', 'Martha']
-console.log(owners.sort())
-console.log(owners)
+// // Strings
+// const owners = ['Jonas', 'Zack', 'Adam', 'Martha']
+// console.log(owners.sort())
+// console.log(owners)
 
-// Numbers
+// // Numbers
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-console.log(movements)
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// console.log(movements)
 
-// return < 0, A, B (keep order)
-// return > 0, B, A (switch order)
+// // return < 0, A, B (keep order)
+// // return > 0, B, A (switch order)
 
-// Ascending
-// movements.sort((a, b) => {
-//   if(a > b) return 1
-//   if(b > a) return -1
-// })
+// // Ascending
+// // movements.sort((a, b) => {
+// //   if(a > b) return 1
+// //   if(b > a) return -1
+// // })
 
-movements.sort((a, b) => a - b)
-console.log(movements)
+// movements.sort((a, b) => a - b)
+// console.log(movements)
 
-// Descending
-// movements.sort((a, b) => {
-//   if(a > b) return -1
-//   if(b > a) return 1
-// })
+// // Descending
+// // movements.sort((a, b) => {
+// //   if(a > b) return -1
+// //   if(b > a) return 1
+// // })
 
-movements.sort((a, b) => b - a)
+// movements.sort((a, b) => b - a)
 
-console.log(movements)
+// console.log(movements)
 
 
 // flat and flatMap Methods
