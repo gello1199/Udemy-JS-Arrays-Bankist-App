@@ -241,6 +241,17 @@ console.log(z)
 const random = Array.from({length: 100}, (_, i) => Math.floor(Math.random() * i))
 console.log(random)
 
+labelBalance.addEventListener('click', () => {
+  const movementsUI = Array.from(document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', '')))
+
+  console.log(movementsUI)
+
+  // const movementsUI2 = [...document.querySelectorAll('.movements__value')]
+
+  // console.log(movementsUI2)
+})
+
+
 // Sorting Arrays
 
 // // Strings
