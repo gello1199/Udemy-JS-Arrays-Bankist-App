@@ -215,7 +215,7 @@ btnSort.addEventListener('click', function(e) {
 
 // Array practice
 
-const bankDepositSum = accounts.map(acc => acc.movements)
+const bankDepositSum = accounts.flatMap(acc => acc.movements)
 
 console.log(bankDepositSum)
 
