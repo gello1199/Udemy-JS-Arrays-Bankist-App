@@ -259,6 +259,46 @@ console.log(dogs)
 const dogSarah = dogs.find(dog => dog.owners.includes('Sarah')) 
 console.log(`Srash's dog is eating too ${dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'}`)
 
+// 3. 
+const ownersEatTooMuch = dogs
+.filter(dog => dog.curFood > dog.recFood)
+.flatMap(dog => dog.owners)
+  
+console.log(ownersEatTooMuch) 
+
+const ownersEatTooLittle = dogs
+.filter(dog => dog.curFood < dog.recFood)
+.flatMap(dog => dog.owners)
+  
+console.log(ownersEatTooLittle) 
+
+// 4.
+// "Matilda and Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat too little!"
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`)
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`)
+
+// 5. 
+console.log(dogs.some(dog => dog.curFood === dog.recFood))
+
+// 6.
+// console.log(dogs.some(dog => dog.curFood > (dog.recFood * 0.90) && dog.curFood < (dog.recFood * 1.10)))
+
+// 7. 
+
+const checkEatingOkay = dog => dog.curFood > (dog.recFood * 0.90) && dog.curFood < (dog.recFood * 1.10)
+
+console.log(dogs.some(checkEatingOkay))
+
+console.log(dogs.filter(checkEatingOkay))
+
+// 8.
+// 8. Create a shallow copy of the dogs array and sort it by recommended food portion in an ascending order (keep in mind that the portions are inside the array's objects)
+
+const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood)
+console.log(dogsSorted)
+
+
+
 // Array practice
 
 // 1.
